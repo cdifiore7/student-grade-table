@@ -1,27 +1,28 @@
+/* eslint-disable no-undef */
 class App {
+  constructor(gradeTable) {
+    this.gradeTable = gradeTable
+    this.handleGetGradesError = this.handleGetGradesError.bind(this);
+    this.handleGetGradesSuccess = this.handleGetGradesSuccess.bind(this)
+  }
   handleGetGradesError(error) {
     console.log(error);
   }
   handleGetGradesSuccess(grades) {
-    this.gradeTable.updatesGrades(grades);
-  }
-  constructor(gradeTable) {
-    this.handleGetGradesError = this.handleGetGradesError(this);
-    this.handleGetGradesSuccess = this.handleGetGradesSuccess(this)
-    this.gradeTable = this.gradeTable
+    this.gradeTable.updateGrades(grades);
   }
   getGrades() {
-    var ajax = {
-      method: "GET",
+    var load = {
+      method: 'GET',
+      url: 'https://sgt.lfzprototypes.com/api/grades',
       success: this.handleGetGradesSuccess,
       error: this.handleGetGradesError,
       headers: {
-        "X-Access-Token": ""
-      },
-    }
+        "X-Access-Token" : "8xQfzCzF"
+    }}
+$.ajax(load)
   }
-  $.ajax("https://sgt.lfzprototypes.com/api/grades", ajax)
-  start() {
-    this.getGrades()
+  start(){
+    this.getGrades();
   }
 }
