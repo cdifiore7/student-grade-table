@@ -2,7 +2,6 @@ class GradeTable {
   constructor(tableElement, noGradesElement) {
     this.tableElement = tableElement;
     this.noGradesElement = noGradesElement;
-
   }
   updateGrades(grades) {
     var tbody = document.querySelector('tbody');

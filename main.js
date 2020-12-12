@@ -5,5 +5,5 @@ var pageHead = new PageHeader(header);
 var formElement= document.querySelector('form');
 var gradeForm = new GradeForm(formElement);
 var app = new App(gradeTable, pageHead, gradeForm);
-var p = document.querySelector('p');
+var p = document.querySelector('#d-none');
 app.start();

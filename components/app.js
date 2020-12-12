@@ -47,7 +47,7 @@ handleCreateGradeSuccess(){
   this.getGrades();
 }
 handleCreateGradeError(error){
-  console.error();
+  console.error(error);
 }
 createGrade(name, course, grade) {
   var ajaxConfig = {
@@ -80,7 +80,7 @@ deleteGrade(id){
   $.ajax("https://sgt.lfzprototypes.com/api/grades/" + id, deleteconfig)
 }
 handleDeleteGradeError(error){
-  console.error();
+  console.error(error);
 }
 handleDeleteGradeSuccess(){
   this.getGrades();
